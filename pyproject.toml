@@ -1,0 +1,33 @@
+[project]
+name = "fall-down-yolo"
+version = "0.2.0"
+description = "本地摔倒检测系统"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.12.0",
+    "torchaudio>=2.11.0",
+    "torchvision>=0.27.0",
+    "ultralytics>=8.4.53",
+    "fastapi>=0.115.0",
+    "opencv-python>=4.10.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "sqlalchemy>=2.0.0",
+    "uvicorn[standard]>=0.30.0",
+    "pyjwt>=2.0.0",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+torchaudio = { index = "pytorch-cu126" }
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+torch = [
+  { index = "pytorch-cu126", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+  { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]

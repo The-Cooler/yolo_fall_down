@@ -1,0 +1,26 @@
+server:
+  host: "127.0.0.1"
+  port: 9500
+
+detection:
+  model_path: "models/out/best.pt"
+  default_fps: 2.0
+  default_conf_threshold: 0.25
+  alert_cooldown_seconds: 30
+
+stream:
+  open_timeout_ms: 5000
+  read_timeout_ms: 5000
+  mjpeg_fps: 20
+  jpeg_quality: 80
+  mjpeg_read_retry_count: 30
+  mjpeg_read_retry_delay_ms: 100
+
+database:
+  url: "sqlite:///data/fall_down.db"
+
+auth:
+  jwt_secret: "change-me-to-a-random-string"
+  jwt_expire_hours: 24
+  project_id: "001"
+

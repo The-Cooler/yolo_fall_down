@@ -1,0 +1,8 @@
+path: datasets
+train: images/train
+val: images/val
+
+names:
+  0: fall
+  1: stand
+  2: sit
